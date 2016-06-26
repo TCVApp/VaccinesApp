@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ortega.vaccinesapp.MainActivity"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/banner">
 
 
     <Button
@@ -47,4 +47,13 @@
         android:layout_above="@+id/btn_inisesion"
         android:layout_alignParentEnd="true"
         android:textAlignment="center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/logo"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView" />
 </RelativeLayout>
