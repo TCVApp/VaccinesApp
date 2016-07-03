@@ -17,8 +17,37 @@ import cz.msebera.android.httpclient.Header;
 public class Paciente {
     private String nombre;
     private String password;
+    private String url;
+    private JSONArray arregloJSON;
 
-    public Paciente(){
+    public Paciente(String urlUser){
+        this.url = urlUser;
+    }
 
+    public String obtenerNombre() {
+        AsyncHttpClient cliente = new AsyncHttpClient();
+        RequestParams parametros = new RequestParams();
+        parametros.put("nombre", "NOEMI FRANCO");
+
+        cliente.post(url, parametros, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    try {
+                        arregloJSON = new JSONArray(new String(responseBody));
+
+                    }catch (Exception e){
+
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+        return "";
     }
 }
