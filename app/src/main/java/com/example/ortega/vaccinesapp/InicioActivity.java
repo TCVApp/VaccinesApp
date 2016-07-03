@@ -1,14 +1,16 @@
 package com.example.ortega.vaccinesapp;
 
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
 public class InicioActivity extends AppCompatActivity {
     private WebView myWebView;
-    public String myURL = "http://10.0.0.12/Fepro/LoginAct.html";
+    public String myURL = "http://192.168.10.34/Fepro/LoginAct.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,4 +42,5 @@ public class InicioActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 }

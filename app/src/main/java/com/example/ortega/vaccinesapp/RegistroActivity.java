@@ -8,7 +8,7 @@ import android.webkit.WebViewClient;
 
 public class RegistroActivity extends AppCompatActivity {
     private WebView myWebView;
-    public String myURL = "http://10.0.0.12/Fepro/RegistroAct.html";
+    public String myURL = "http://192.168.10.34/Fepro/RegistroAct.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
