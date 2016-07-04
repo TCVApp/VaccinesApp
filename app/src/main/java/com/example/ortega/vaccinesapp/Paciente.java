@@ -15,13 +15,15 @@ import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class Paciente {
-    private String nombre;
+    private String nAfiliacion;
     private String password;
     private String url;
     private JSONArray arregloJSON;
 
-    public Paciente(String urlUser){
-        this.url = urlUser;
+    public Paciente(String nAfiliacion, String password){
+        this.url = "";
+        this.nAfiliacion = nAfiliacion;
+        this.password = password;
     }
 
     public String obtenerNombre() {
@@ -48,6 +50,10 @@ public class Paciente {
 
             }
         });
-        return "";
+        return "Noemi";
+    }
+
+    public String obtenerPassword(){
+        return "mimichula";
     }
 }
