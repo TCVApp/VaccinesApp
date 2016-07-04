@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 
 /**
  * Created by Ortega on 04/07/2016.
@@ -32,7 +33,11 @@ public class DialogoError extends DialogFragment {
         this.msjError = mensaje;
     }
 
-    public void establecetTitulo(String title){
+    public void establecerTitulo(String title){
         this.titulo = title;
+    }
+
+    public void mostrar(FragmentManager fragmentManager){
+        //super.show(fragmentManager, "tagError");
     }
 }

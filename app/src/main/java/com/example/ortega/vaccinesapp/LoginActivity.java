@@ -1,5 +1,7 @@
 package com.example.ortega.vaccinesapp;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Primero validamos usuario
                 if(etAfiliacion.getText().toString().equals(paciente.obtenerNombre())){  //si el nombre de usuario NO es correcto o NO se encuentra en la base de datos
+                    //Se lanza un cuadro de dialogo que indica al usuario que el No. de afiliacion no es correcto
+
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+
+                    DialogoError msjError = new DialogoError();
+                    msjError.establecerTitulo("ERROR!!! (x_X)");
+                    msjError.establecerMensaje("El paciente no está registrado en el sistema :'(");
+
+                   // msjError.show(fragmentManager, "tagAlerta");
 
                 }else{
 
