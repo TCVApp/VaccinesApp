@@ -21,7 +21,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                paciente = new Paciente(etAfiliacion.getText().toString(), etPassword.getText().toString());
 
+                //Primero validamos usuario
+                if(etAfiliacion.getText().toString().equals(paciente.obtenerNombre())){  //si el nombre de usuario NO es correcto o NO se encuentra en la base de datos
+
+                }else{
+
+                }
             }
         });
 
