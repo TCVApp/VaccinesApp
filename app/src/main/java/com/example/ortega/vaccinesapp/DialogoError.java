@@ -12,8 +12,8 @@ import android.support.v4.app.FragmentManager;
  */
 public class DialogoError extends DialogFragment {
 
-    private String msjError = "";
-    private String titulo = "";
+    private String msjError = "Usuario incorrecto";
+    private String titulo = "Error";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {

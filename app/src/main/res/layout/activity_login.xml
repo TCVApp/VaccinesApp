@@ -42,9 +42,9 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/etPassword"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:hint="Contraseña" />
+        android:hint="Contraseña"
+        android:layout_above="@+id/buttonLogin"
+        android:layout_alignStart="@+id/etNumAfiliacion" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,9 +52,9 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/etNumAfiliacion"
+        android:layout_marginBottom="58dp"
+        android:hint="No. Afiliación"
         android:layout_above="@+id/etPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:hint="No. Afiliación" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

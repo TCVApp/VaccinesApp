@@ -19,15 +19,14 @@ public class Paciente {
     private String password;
     private String url;
     private JSONArray arregloJSON;
+    AsyncHttpClient cliente;
 
     public Paciente(String nAfiliacion, String password){
-        this.url = "";
+        this.url = "http://192.168.10.34/Fepro/getUsuario.php";
         this.nAfiliacion = nAfiliacion;
         this.password = password;
-    }
+        cliente = new AsyncHttpClient();
 
-    public String obtenerNombre() {
-        AsyncHttpClient cliente = new AsyncHttpClient();
         RequestParams parametros = new RequestParams();
         parametros.put("nombre", "NOEMI FRANCO");
 
@@ -39,7 +38,7 @@ public class Paciente {
                         arregloJSON = new JSONArray(new String(responseBody));
 
                     }catch (Exception e){
-
+                        e.printStackTrace();
                     }
 
                 }
@@ -50,10 +49,39 @@ public class Paciente {
 
             }
         });
-        return "Noemi";
+    }
+
+    public String obtenerAfiliacion() {
+
+        try {
+            //Buscar el usuario dentro del arregloJSON de acuerdo a nuestro atributo
+            for(int i=0; i < arregloJSON.length(); i++){
+                if(arregloJSON.getJSONObject(i).getString("afiliacion").equals(nAfiliacion)){
+                    return arregloJSON.getJSONObject(i).getString("afiliacion");                  //devuelve el numero de afiliacion encontrado en el array
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //devuelve error si la afiliacion dada por el usuario no existe en el arregloJSON obtenida de la base de datos
+        return "error";
     }
 
     public String obtenerPassword(){
-        return "mimichula";
+
+        try {
+            //Buscar el usuario dentro del arregloJSON de acuerdo a nuestro atributo
+            for(int i=0; i < arregloJSON.length(); i++){
+                if(arregloJSON.getJSONObject(i).getString("password").equals(nAfiliacion)){
+                    return arregloJSON.getJSONObject(i).getString("password");        //devuelve la contraseña encontrado en el array
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //devuelve error si la contraseña dada por el usuario no existe en el arregloJSON obtenida de la base de datos
+        return "error";
     }
 }
