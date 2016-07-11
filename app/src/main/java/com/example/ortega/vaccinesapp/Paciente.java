@@ -22,7 +22,7 @@ public class Paciente {
     AsyncHttpClient cliente;
 
     public Paciente(String nAfiliacion, String password){
-        this.url = "http://192.168.10.34/Fepro/getUsuario.php";
+        this.url = "http://192.168.10.234/Fepro/getUsuario.php";
         this.nAfiliacion = nAfiliacion;
         this.password = password;
         cliente = new AsyncHttpClient();
@@ -53,7 +53,7 @@ public class Paciente {
 
     public String obtenerAfiliacion() {
 
-        try {
+        /*try {
             //Buscar el usuario dentro del arregloJSON de acuerdo a nuestro atributo
             for(int i=0; i < arregloJSON.length(); i++){
                 if(arregloJSON.getJSONObject(i).getString("afiliacion").equals(nAfiliacion)){
@@ -62,15 +62,24 @@ public class Paciente {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
 
         //devuelve error si la afiliacion dada por el usuario no existe en el arregloJSON obtenida de la base de datos
-        return "error";
+
+        String afiliacion = "error";
+
+        try {
+            afiliacion = arregloJSON.getJSONObject(0).getString("afiliacion");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return afiliacion;
     }
 
     public String obtenerPassword(){
 
-        try {
+       /* try {
             //Buscar el usuario dentro del arregloJSON de acuerdo a nuestro atributo
             for(int i=0; i < arregloJSON.length(); i++){
                 if(arregloJSON.getJSONObject(i).getString("password").equals(nAfiliacion)){
@@ -79,9 +88,17 @@ public class Paciente {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }*/
+
+        String afiliacion = "error";
+
+        try {
+            afiliacion = arregloJSON.getJSONObject(0).getString("password");
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
         //devuelve error si la contraseña dada por el usuario no existe en el arregloJSON obtenida de la base de datos
-        return "error";
+        return afiliacion;
     }
 }
