@@ -1,0 +1,83 @@
+commit 3b8346b1ea6cd94a2f38c3bed8fe5315e4449eea
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Mon Jul 4 16:24:50 2016 -0500
+
+    Se anade un cuadro de dialogo de error con la clase DialogoError.java
+
+commit 9b7561fbcfa8a3064afa2ec5949cbb453e0db0c2
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Mon Jul 4 15:52:22 2016 -0500
+
+    Agregamos nuevamente el LoginActivity
+
+commit 6c4092506424359d951c0577383a767d6037541b
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jul 2 22:16:51 2016 -0500
+
+    implementando json en la clase Paciente
+
+commit 4b51aa916e051eca7592608c7acde60e925fb6f3
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jul 2 21:22:18 2016 -0500
+
+    creamos una nueva clase Paciente
+
+commit a563d4141cb0404ee0ee65908abf4a6172e996de
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Mon Jun 27 16:23:43 2016 -0500
+
+    cambiamos IP del servidor en registro_activity para que se conecte Mimi
+
+commit 7515c4f3539a916a0ea9ad7c6425385598dff427
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Mon Jun 27 15:33:46 2016 -0500
+
+    cambiamos IP del servidor para que se conecte Mimi
+
+commit d5ef9e1c810597ee423fc3d6a5344dceb7f07243
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:40:48 2016 -0500
+
+    Boton btnRegistrar enlaza a activity_registro
+
+commit 1199bf3d98f5f06c0ee032443c2073d78d237e3e
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:35:20 2016 -0500
+
+    Agregamos activity_registro con WebView
+
+commit dd27460ff3446c33fcb5262d4e449b02a475a7f8
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:25:13 2016 -0500
+
+    InicioActivity.java direcciona al login de usuario
+
+commit 98c37c122f2effcef587c2377480651dc44f7dc0
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:21:37 2016 -0500
+
+    Se modifico el color de los botones en activity_main.xml
+
+commit f777ee17e5d12a76df4b99434eeb48122df7f7bc
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:05:35 2016 -0500
+
+    Modificamos el fondo y agregamos logo al activity_main
+
+commit 25a34480b0a8e70c5a526012f7b561fafce20769
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 23:01:30 2016 -0500
+
+    Agregamos 2 imagenes a la carpeta drawable
+
+commit 959b342a520673c65cdaa3e2dd91e0dc043354f1
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 22:54:09 2016 -0500
+
+    IDE agrega vcs.xml
+
+commit 8fcea4e4bf145af38fc501f38f342a62416ad1aa
+Author: MasterBlck <add_090@hotmail.com>
+Date:   Sat Jun 25 22:51:02 2016 -0500
+
+    Iniciamos a trabajar

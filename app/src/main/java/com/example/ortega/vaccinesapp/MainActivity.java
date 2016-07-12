@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Creamos el intent para la comunicacion con la otra activity
-                Intent intent = new Intent(MainActivity.this, InicioActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 
                 //iniciamos la nueva actividad
                 startActivity(intent);
@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Creamos el intent para la comunicacion con la otra activity
+                Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
 
+                //iniciamos la nueva actividad
+                startActivity(intent);
             }
         });
 
