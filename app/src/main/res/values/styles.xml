@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="VaccinesAppTheme" parent="AppTheme" />
+
+    <style name="VaccinesAppTheme.Dark" parent="VaccinesAppTheme" >
+        <item name="android:textColorPrimary">@color/primary_text_material_light</item>
+    </style>
+
 
     <!--Con esto esconde la barra de título-->
 

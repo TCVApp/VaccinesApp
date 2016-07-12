@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_text_default_material_light">#78988f</color>
+    <color name="vaccines_primary_text_default_material_light">#de748d86</color>
+    <color name="vaccines_primary_text_default_material_dark">#de000000</color>
+</resources>
