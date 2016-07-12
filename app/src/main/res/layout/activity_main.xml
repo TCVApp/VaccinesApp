@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Iniciar Sesión"
         android:id="@+id/btn_inisesion"
-        android:textColor="@color/abc_primary_text_disable_only_material_dark"
+        android:textColor="@color/abc_primary_text_disable_only_material_light"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:textSize="15dp"/>
@@ -31,7 +31,8 @@
         android:textSize="15dp"
         android:textStyle="normal"
 
-        android:layout_below="@+id/textView2" />
+        android:layout_below="@+id/textView2"
+        android:textColor="@color/abc_primary_text_disable_only_material_light" />
 
     <TextView
         android:layout_width="wrap_content"
