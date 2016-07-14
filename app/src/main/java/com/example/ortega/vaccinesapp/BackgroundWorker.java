@@ -2,6 +2,7 @@ package com.example.ortega.vaccinesapp;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -54,6 +55,8 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
                 //Código pesado para extaer los datos de la peticion
                 String post_data = URLEncoder.encode("afiliacion", "UTF-8") +"="+ URLEncoder.encode(nAfiliacion, "UTF-8") +"&"    //Para el _POST["afiliacion"]
                         +URLEncoder.encode("password", "UTF-8") +"="+ URLEncoder.encode(password, "UTF-8");                       //Para el _POST["password"]
+
+                //Aqui es donde enviamos los datos a la aplicacion web
                 bufferedWriter.write(post_data);
                 Log.e("Valor de POST", post_data);
                 bufferedWriter.flush();
@@ -94,12 +97,21 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
 
     @Override
     protected void onPostExecute(String resultado){
-        dialogoAlerta.setMessage(resultado);
-        dialogoAlerta.show();
+
+        //Comparar el resultado para que con base a eso digamos que el usuario se logueo exitosamente
+        if(resultado.equals("1")){
+
+            Intent intent = new Intent(contexto, MenuTabular.class);
+            contexto.startActivity(intent);
+        }else{
+            dialogoAlerta.setMessage(resultado +": Login not Success");
+            dialogoAlerta.show();
+        }
     }
 
     @Override
     protected void onProgressUpdate(Void... values) {
         super.onProgressUpdate(values);
     }
+
 }
