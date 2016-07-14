@@ -34,7 +34,8 @@
         android:text="Iniciar Sesión"
         android:id="@+id/buttonLogin"
         android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onLoguear"/>
 
     <EditText
         android:layout_width="wrap_content"
