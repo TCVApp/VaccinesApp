@@ -73,6 +73,11 @@ public class MenuTabular extends AppCompatActivity {
         spec.setIndicator("MAPA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
+        spec = tabs.newTabSpec("miTab7");
+        spec.setContent(R.id.tab6);
+        spec.setIndicator("MAPA2", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        tabs.addTab(spec);
+
         tabs.setCurrentTab(0);
 
         //Implementacion del evento para visualizar las tabulaciones
