@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -24,10 +25,12 @@ import java.net.URLEncoder;
 public class BackgroundWorker  extends AsyncTask<String, Void, String>{
     Context contexto;
     AlertDialog dialogoAlerta;
+    String nAfiliacion, password;
 
     public BackgroundWorker(Context ctx){
         this.contexto = ctx;
     }
+
     @Override
     protected String doInBackground(String... parametros) {
         String tipo = parametros[0];
@@ -36,8 +39,8 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
         if (tipo.equals("Login")){
             try {
                 //regogemos los parametros que vamos a procesar
-                String nAfiliacion = parametros[1];
-                String password = parametros[2];
+                nAfiliacion = parametros[1];
+                password = parametros[2];
                 URL url = new URL(login_url);
 
                 //Abrir conexion con el servidor por medio de http
@@ -102,6 +105,14 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
         if(resultado.equals("1")){
 
             Intent intent = new Intent(contexto, MenuTabular.class);
+
+            //PAsamos el numero de afiliacion hacia la actividad MenuTabular
+            Bundle bundle = new Bundle();
+            bundle.putString("N_AFILIACION", nAfiliacion);
+
+            //Añadimos la información al intent
+            intent.putExtras(bundle);
+
             contexto.startActivity(intent);
         }else{
             dialogoAlerta.setMessage(resultado +": Login not Success");

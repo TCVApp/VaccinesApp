@@ -1,8 +1,12 @@
 package com.example.ortega.vaccinesapp;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -10,6 +14,8 @@ import android.webkit.WebViewClient;
 import android.widget.TabHost;
 
 public class MenuTabular extends AppCompatActivity {
+    private static final int NOTIF_ALERTA_ID = 1;
+
     TabHost tabs;
     Resources recursos;
     WebView wvPerfil;
@@ -21,6 +27,26 @@ public class MenuTabular extends AppCompatActivity {
 
         wvPerfil = (WebView) super.findViewById(R.id.WebView_perfil);
 
+        //Recuperamos la información pasada en el LoginActivity
+        Bundle bundle = this.getIntent().getExtras();
+        String usuario = bundle.getString("N_AFILIACION");
+        Log.e("Recuparacion:", "Recupere el dato: " +usuario);
+
+        //Crear una notificacion de acuerdo al dato recibido
+        NotificationCompat.Builder nBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(MenuTabular.this)
+                .setSmallIcon(android.R.drawable.stat_sys_warning)
+                .setLargeIcon((((BitmapDrawable)getResources().getDrawable(R.mipmap.ic_launcher)).getBitmap()))
+                .setContentTitle("Mensaje de Alerta")
+                .setContentText("Usuario: " +usuario+ " tiene una notificacion")
+                .setContentInfo("1")
+                .setTicker("Alerta!");
+
+        //Lanza la notificacion al usuario:
+        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.notify(MenuTabular.NOTIF_ALERTA_ID, nBuilder.build());
+
+
+        //------------------------------------------------------------------------------------------------------------------
         recursos = super.getResources();
 
         tabs = (TabHost) super.findViewById(android.R.id.tabhost);
