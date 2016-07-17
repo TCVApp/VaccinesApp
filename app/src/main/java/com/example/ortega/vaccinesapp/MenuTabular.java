@@ -37,7 +37,7 @@ public class MenuTabular extends AppCompatActivity {
         configuracionWeb.setJavaScriptEnabled(true);
 
         //URL que carga nuestra app (WebView)
-        wvPerfil.loadUrl("http://192.168.10.34/VaccinesAppWeb/InicioAct.html");
+        wvPerfil.loadUrl(new Conexion().obtenerURLInicio());
 
         //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
         wvPerfil.setWebViewClient(new WebViewClient());

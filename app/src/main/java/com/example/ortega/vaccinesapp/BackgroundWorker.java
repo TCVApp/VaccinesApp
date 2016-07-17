@@ -31,7 +31,7 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
     @Override
     protected String doInBackground(String... parametros) {
         String tipo = parametros[0];
-        String login_url = "http://192.168.10.34/Fepro/Login.php";
+        String login_url = new Conexion().obtenerURLLogin();
 
         if (tipo.equals("Login")){
             try {
@@ -42,7 +42,7 @@ public class BackgroundWorker  extends AsyncTask<String, Void, String>{
 
                 //Abrir conexion con el servidor por medio de http
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                httpURLConnection.setRequestMethod("POST");                                        //El método de POST lo recibira el script.php
+                httpURLConnection.setRequestMethod("POST");                                        //El método de POST lo recibira el script Login.php
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
 

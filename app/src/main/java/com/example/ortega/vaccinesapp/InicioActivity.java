@@ -10,7 +10,7 @@ import android.webkit.WebViewClient;
 
 public class InicioActivity extends AppCompatActivity {
     private WebView myWebView;
-    public String myURL = "http://192.168.10.34/Fepro/LoginAct.html";
+    public String myURL = new Conexion().obtenerURLInicio();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -17,8 +17,19 @@ public class Conexion {
         this.url = "http://"+ip+"/";
     }
 
-    public String getUrlRegistro(){
-        url += "VaccinesAppWeb//";
+    public String obtenerUrlRegistro(){                     //El RegistroAct.html no está en la web actual
+        url += "VaccinesAppWeb/RegistroAct.html";
         return url;
     }
+
+    public String obtenerURLInicio(){
+        url += "VaccinesAppWeb/InicioAct.html";
+        return url;
+    }
+
+    public String obtenerURLLogin(){
+        url += "VaccinesAppWeb/Login.php";
+        return url;
+    }
+
 }
