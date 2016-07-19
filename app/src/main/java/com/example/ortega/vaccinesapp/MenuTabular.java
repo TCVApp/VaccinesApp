@@ -13,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TabHost;
 
+
 public class MenuTabular extends AppCompatActivity {
     private static final int NOTIF_ALERTA_ID = 1;
 
@@ -46,6 +47,11 @@ public class MenuTabular extends AppCompatActivity {
         mNotificationManager.notify(MenuTabular.NOTIF_ALERTA_ID, nBuilder.build());
 
 
+        //Creamos el objeto BackgroundWorker y pasamos como parametro el contexto de ésta clase para que el procesamiento lo haga en segundo plano
+        //BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        //backgroundWorker.execute("Notificacion", usuario, "");   //Pasamos los argumentos con los que se debe de trabajar en segundo plano
+
+
         //------------------------------------------------------------------------------------------------------------------
         recursos = super.getResources();
 
@@ -70,6 +76,7 @@ public class MenuTabular extends AppCompatActivity {
 
         //forzamos el WebView para que abra los enlaces externos en el Navegador
         wvPerfil.setWebViewClient(new MyAppWebViewClient());
+
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
 

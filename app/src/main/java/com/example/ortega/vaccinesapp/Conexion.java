@@ -32,4 +32,9 @@ public class Conexion {
         return url;
     }
 
+    public String obtenerURLNotificacion(){
+        url += "VaccinesAppWeb/getNotificacion.php";
+        return url;
+    }
+
 }
