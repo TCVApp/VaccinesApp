@@ -19,7 +19,7 @@ public class MenuTabular extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_tabular);
 
-        wvPerfil = (WebView) super.findViewById(R.id.WebView_perfil);
+       // wvPerfil = (WebView) super.findViewById(R.id.WebView_perfil);
 
         recursos = super.getResources();
 
@@ -28,7 +28,7 @@ public class MenuTabular extends AppCompatActivity {
 
         TabHost.TabSpec spec = tabs.newTabSpec("miTab1");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("INICIO", recursos.getDrawable(android.R.drawable.ic_btn_speak_now));
+        //spec.setIndicator("INICIO", recursos.getDrawable(android.R.drawable.ic_btn_speak_now));
         tabs.addTab(spec);
 
         //-----------------------------------------------------trabajando con WebView del Perfil-----------------------------------------------------
@@ -50,27 +50,27 @@ public class MenuTabular extends AppCompatActivity {
 
         spec = tabs.newTabSpec("miTab2");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("ESQUEMA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        //spec.setIndicator("ESQUEMA", recursos.getDrawable(android.R.drawable.ic_insert_invitation_white_48dp));
         tabs.addTab(spec);
 
         spec = tabs.newTabSpec("miTab3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("PERFIL", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        //spec.setIndicator("PERFIL", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
         spec = tabs.newTabSpec("miTab4");
         spec.setContent(R.id.tab4);
-        spec.setIndicator("NUTRI", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        //spec.setIndicator("NUTRI", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
         spec = tabs.newTabSpec("miTab5");
         spec.setContent(R.id.tab5);
-        spec.setIndicator("CITAS", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        //spec.setIndicator("CITAS", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
         spec = tabs.newTabSpec("miTab6");
         spec.setContent(R.id.tab6);
-        spec.setIndicator("MAPA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
+        //spec.setIndicator("MAPA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
         tabs.setCurrentTab(0);

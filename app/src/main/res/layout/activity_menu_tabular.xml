@@ -34,12 +34,8 @@
                     android:id="@+id/tab1"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <WebView
-                        android:id="@+id/WebView_perfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_sentiment_satisfied_white_48dp">
 
                 </LinearLayout>
 
@@ -47,12 +43,8 @@
                     android:id="@+id/tab2"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <WebView
-                        android:id="@+id/WebView_esquema"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_insert_invitation_white_48dp">
 
                 </LinearLayout>
 
@@ -60,12 +52,9 @@
                     android:id="@+id/tab3"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_account_circle_white_48dp">
 
-                    <WebView
-                        android:id="@+id/WebView_recomendacion"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
 
                 </LinearLayout>
 
@@ -73,7 +62,8 @@
                     android:id="@+id/tab4"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_sentiment_satisfied_white_48dp">
 
 
                 </LinearLayout>
@@ -82,7 +72,8 @@
                     android:id="@+id/tab5"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_menu_white_48dp">
 
                 </LinearLayout>
 
@@ -90,7 +81,8 @@
                     android:id="@+id/tab6"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_place_white_48dp">
 
                 </LinearLayout>
 
