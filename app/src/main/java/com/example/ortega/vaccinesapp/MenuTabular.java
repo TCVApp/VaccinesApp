@@ -1,7 +1,9 @@
 package com.example.ortega.vaccinesapp;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -42,13 +44,18 @@ public class MenuTabular extends AppCompatActivity {
                 .setContentInfo("1")
                 .setTicker("Alerta!");
 
+        //codigo para llamar a la actividad cuando se presiona en la notificacion
+        Intent intent = new Intent(MenuTabular.this, NotificacionActivity.class);
+        PendingIntent contIntent = PendingIntent.getActivity(MenuTabular.this, 0, intent, 0);
+        nBuilder.setContentIntent(contIntent);
+
         //Lanza la notificacion al usuario:
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(MenuTabular.NOTIF_ALERTA_ID, nBuilder.build());
 
 
         //Creamos el objeto BackgroundWorker y pasamos como parametro el contexto de ésta clase para que el procesamiento lo haga en segundo plano
-        //BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        //BackgroundMenuTabular backgroundWorker = new BackgroundMenuTabular(this);
         //backgroundWorker.execute("Notificacion", usuario, "");   //Pasamos los argumentos con los que se debe de trabajar en segundo plano
 
 
