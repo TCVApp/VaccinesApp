@@ -113,6 +113,9 @@ public class MenuTabular extends AppCompatActivity {
             @Override
             public void onTabChanged(String tabId) {
                 Log.i("Android Tabs", "Pestaña pulsada: " +tabId);
+
+                // De acuerdo a la pestaña seleccionada, mostrar la información correcta en la webView
+
             }
         });
     }
