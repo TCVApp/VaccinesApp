@@ -21,7 +21,7 @@ public class MenuTabular extends AppCompatActivity {
 
     TabHost tabs;
     Resources recursos;
-    WebView wvPerfil;
+    WebView wvPerfil, wvEsquema, wvNutricion, wvCitas, wvMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,10 @@ public class MenuTabular extends AppCompatActivity {
         setContentView(R.layout.activity_menu_tabular);
 
         wvPerfil = (WebView) super.findViewById(R.id.WebView_perfil);
+        wvEsquema = (WebView) super.findViewById(R.id.WebView_esquema);
+        wvNutricion = (WebView) super.findViewById(R.id.WebView_nutricion);
+        wvCitas =  (WebView) super.findViewById(R.id.WebView_citas);
+        wvMaps = (WebView) super.findViewById(R.id.WebView_maps);
 
         //Recuperamos la información pasada en el LoginActivity
         Bundle bundle = this.getIntent().getExtras();
@@ -70,7 +74,7 @@ public class MenuTabular extends AppCompatActivity {
         spec.setIndicator("INICIO", recursos.getDrawable(android.R.drawable.ic_btn_speak_now));
         tabs.addTab(spec);
 
-        //-----------------------------------------------------trabajando con WebView del Perfil-----------------------------------------------------
+        //-----------------------------------------------------trabajando con WebView del Inicio-----------------------------------------------------
         //Activamos JavaScript
         WebSettings configuracionWeb = wvPerfil.getSettings();
         configuracionWeb.setJavaScriptEnabled(true);
@@ -82,7 +86,7 @@ public class MenuTabular extends AppCompatActivity {
         wvPerfil.setWebViewClient(new WebViewClient());
 
         //forzamos el WebView para que abra los enlaces externos en el Navegador
-        wvPerfil.setWebViewClient(new MyAppWebViewClient());
+        //wvPerfil.setWebViewClient(new MyAppWebViewClient());
 
 
         //-------------------------------------------------------------------------------------------------------------------------------------------
@@ -93,25 +97,111 @@ public class MenuTabular extends AppCompatActivity {
         spec.setIndicator("ESQUEMA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
+        //-----------------------------------------------------trabajando con WebView del Esquema-----------------------------------------------------
+        //Activamos JavaScript
+        WebSettings configuracionWeb2 = wvEsquema.getSettings();
+        configuracionWeb2.setJavaScriptEnabled(true);
+
+        //URL que carga nuestra app (WebView)
+        wvEsquema.loadUrl(new Conexion().obtenerURLEsquema());
+
+        //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
+        wvEsquema.setWebViewClient(new WebViewClient());
+
+        //forzamos el WebView para que abra los enlaces externos en el Navegador
+        //wvEsquema.setWebViewClient(new MyAppWebViewClient());
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------
+
+
         spec = tabs.newTabSpec("miTab3");
         spec.setContent(R.id.tab3);
         spec.setIndicator("PERFIL", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
+
+        //-----------------------------------------------------trabajando con WebView del Perfil-----------------------------------------------------
+        //Activamos JavaScript
+        WebSettings configuracionWeb3 = wvPerfil.getSettings();
+        configuracionWeb3.setJavaScriptEnabled(true);
+
+        //URL que carga nuestra app (WebView)
+        wvPerfil.loadUrl(new Conexion().obtenerURLPerfil());
+
+        //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
+        wvPerfil.setWebViewClient(new WebViewClient());
+
+        //forzamos el WebView para que abra los enlaces externos en el Navegador
+        //wvPerfil.setWebViewClient(new MyAppWebViewClient());
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------
 
         spec = tabs.newTabSpec("miTab4");
         spec.setContent(R.id.tab4);
         spec.setIndicator("NUTRI", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
+        //-----------------------------------------------------trabajando con WebView de Nutricion-----------------------------------------------------
+        //Activamos JavaScript
+        WebSettings configuracionWeb4 = wvNutricion.getSettings();
+        configuracionWeb4.setJavaScriptEnabled(true);
+
+        //URL que carga nuestra app (WebView)
+        wvNutricion.loadUrl(new Conexion().obtenerURLNutricion());
+
+        //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
+        wvNutricion.setWebViewClient(new WebViewClient());
+
+        //forzamos el WebView para que abra los enlaces externos en el Navegador
+        //wvNutricion.setWebViewClient(new MyAppWebViewClient());
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------
+
         spec = tabs.newTabSpec("miTab5");
         spec.setContent(R.id.tab5);
         spec.setIndicator("CITAS", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
+        //-----------------------------------------------------trabajando con WebView de Citas-----------------------------------------------------
+        //Activamos JavaScript
+        WebSettings configuracionWeb5 = wvCitas.getSettings();
+        configuracionWeb5.setJavaScriptEnabled(true);
+
+        //URL que carga nuestra app (WebView)
+        wvCitas.loadUrl(new Conexion().obtenerURLCitas());
+
+        //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
+        wvCitas.setWebViewClient(new WebViewClient());
+
+        //forzamos el WebView para que abra los enlaces externos en el Navegador
+        //wvCitas.setWebViewClient(new MyAppWebViewClient());
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------
+
         spec = tabs.newTabSpec("miTab6");
         spec.setContent(R.id.tab6);
         spec.setIndicator("MAPA", recursos.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
+
+        //-----------------------------------------------------trabajando con WebView de Mapas-----------------------------------------------------
+        //Activamos JavaScript
+        WebSettings configuracionWeb6 = wvMaps.getSettings();
+        configuracionWeb6.setJavaScriptEnabled(true);
+
+        //URL que carga nuestra app (WebView)
+        wvMaps.loadUrl(new Conexion().obtenerURLMaps());
+
+        //forzamos el webview para que abra los enlaces INTERNOS dentro de la APP
+        wvMaps.setWebViewClient(new WebViewClient());
+
+        //forzamos el WebView para que abra los enlaces externos en el Navegador
+        //wvMaps.setWebViewClient(new MyAppWebViewClient());
+
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------
 
         tabs.setCurrentTab(0);
 

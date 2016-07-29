@@ -9,8 +9,8 @@ public class Conexion {
 
     public Conexion(){
         this.ip = "192.168.10.34";
-        this.url = "http://"+ip+"/VaccinesAppWeb";
-        //this.url = "http://"+ip+"/FeproApp";
+        //this.url = "http://"+ip+"/VaccinesAppWeb";
+        this.url = "http://"+ip+"/FeproApp";
     }
 
     public Conexion(String ipServer){
@@ -57,6 +57,11 @@ public class Conexion {
     public String obtenerURLNotificacion(){
         url += "/getNotificacion.php";
         return url;
+    }
+
+    public String obtenerURLMaps(){
+        //url += "/getNotificacion.php";
+        return "https://www.google.com.mx/maps/place/Hospital+Gral.+Zona+Norte+de+Puebla/@19.0790287,-98.1841059,17z/data=!4m5!3m4!1s0x0:0x32ae769757902db3!8m2!3d19.0793508!4d-98.1854414";
     }
 
 }

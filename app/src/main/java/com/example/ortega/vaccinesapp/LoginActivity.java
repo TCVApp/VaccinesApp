@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         etAfiliacion = (EditText) super.findViewById(R.id.etNumAfiliacion);
         etPassword = (EditText) super.findViewById(R.id.etPassword);
         dialogoAlerta = new AlertDialog.Builder(this).create();
+
+        etAfiliacion.setText("201214129");
     }
 
     public void onLoguear(View view){
